@@ -15,10 +15,11 @@ const blogSchema=new Schema({
         type:String,
         required:true
     },
-    author:{
-        type:String,
+    user:{
+        type:mongoose.Types.ObjectId,
+        ref:"User",
         required:true
     }
 })
 
-module.exports= mongoose.model("Blogs",blogSchema)
+module.exports= mongoose.model("Blog",blogSchema)
