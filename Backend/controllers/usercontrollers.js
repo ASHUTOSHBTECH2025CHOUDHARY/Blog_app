@@ -40,7 +40,7 @@ exports.signup=async(req,res,next)=>{
         console.log(error)
     }
     res.status(200).json({
-        user
+    user
     })
 }
 
@@ -60,6 +60,7 @@ exports.login=async(req,res)=>{
     }
 
     res.status(200).json({
-        messsage:"Login Successfull"
+    message:"Login successfull",
+    user:existinguser
     })
 }

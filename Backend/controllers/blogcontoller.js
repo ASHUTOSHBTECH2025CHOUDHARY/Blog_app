@@ -2,7 +2,7 @@ const Blogs=require('../model/Blogmodel')
 const User=require('../model/usermodle')
 
 exports.getblogs=async(req,res)=>{
-    const blogs=await Blogs.find();
+    const blogs=await Blogs.find().populate("user");
     if(!blogs){
         res.status(200).json({
             message:"NO Blogs found"
