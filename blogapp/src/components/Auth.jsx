@@ -38,10 +38,10 @@ const Auth = () => {
     e.preventDefault();
     // console.log(inputs)
     if(isSignup){
-      sendrequest('signup').then((data)=>localStorage.setItem(data.user._id)).then(()=>dispatch(authActions.login())).then(()=>navigate('/blogs'));
+      sendrequest('signup').then((data)=>localStorage.setItem("userId",data.user._id)).then(()=>dispatch(authActions.login())).then(()=>navigate('/blogs'));
     }
     else{
-      sendrequest().then((data)=>localStorage.setItem(data.user._id)).then(()=>dispatch(authActions.login())).then(()=>navigate('/blogs'));
+      sendrequest().then((data)=>localStorage.setItem("userId",data.user._id)).then(()=>dispatch(authActions.login())).then(()=>navigate('/blogs'));
     }
   }
   return (
