@@ -23,18 +23,20 @@ exports.getblog=async(req,res)=>{
 }
 
 exports.addblog=async(req,res)=>{
-    
     const {user}=req.body
-
-    const existinguser=await User.findById(user)
+    
+    const existinguser = await User.findById(user)
+    console.log(user);
     if(!existinguser){
+        console.log(existinguser)
        return res.status(200).json({
         message:"User not found"
         })
     }
     const blog=await Blogs.create(req.body);
-    await existinguser.blogs.push(blog);
+     existinguser.blogs.push(blog);
     await existinguser.save();
+    console.log("add ho gya");
     res.status(200).json({
         blog
     })

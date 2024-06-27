@@ -6,7 +6,7 @@ const UserBlogs = () => {
   const id=localStorage.getItem('userId');
   const [blog, setblog] = useState()
   const sendrequest=async()=>{
-    const res=await axios.get(`http://localhost:3001/Blog/user/${id}`).catch(err=>(console.log(err)));
+    const res=await axios.get(`https://blogapp-dun-ten.vercel.app/Blog/user/${id}`).catch(err=>(console.log(err)));
     const data=res.data
     return data
   }

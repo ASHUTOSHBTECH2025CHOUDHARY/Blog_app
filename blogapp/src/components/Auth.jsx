@@ -24,7 +24,7 @@ const Auth = () => {
   const sendrequest = async (type = "login") => {
     try {
       const res = await axios
-        .post(`http://localhost:3001/Bloguser/${type}`, {
+        .post(`https://blogapp-dun-ten.vercel.app/Bloguser/${type}`, {
           name: inputs.name,
           email: inputs.email,
           password: inputs.password,

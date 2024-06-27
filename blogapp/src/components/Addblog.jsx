@@ -12,7 +12,8 @@ const Addblog = () => {
     imageUrl:''
   })
   const sendrequest=async()=>{
-    axios.post('http://localhost:3001/Blog/addblogs',{
+    console.log(inputs)
+   await axios.post('https://blogapp-dun-ten.vercel.app/Blog/addblogs',{
       title:inputs.title,
       description:inputs.description,
       image:inputs.imageUrl,
@@ -27,8 +28,8 @@ const Addblog = () => {
   }
   const submithandler=(e)=>{
     e.preventDefault()
-    console.log(inputs)
-    sendrequest().then(()=>history('/myblogs'));
+    // console.log(inputs)
+    sendrequest();
   }
   return (
     <div>

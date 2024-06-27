@@ -6,7 +6,7 @@ const Blogs = () => {
   const [blogs, setblogs] = useState()
 
   const sendrequest=async()=>{
-    const res= await axios.get("http://localhost:3001/Blog/getblogs").catch((err)=>console.log(err))
+    const res= await axios.get("https://blogapp-dun-ten.vercel.app/Blog/getblogs").catch((err)=>console.log(err))
     const data=await res.data;
     // console.log(data)
     return data;
